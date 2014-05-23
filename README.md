@@ -21,6 +21,9 @@ Setup
 	# create a new theme
 	$ ./mktheme.sh
 
+	# create a new section
+	$ ./mksection.sh
+
 	# compile themes
 	$ ./css.sh
 
