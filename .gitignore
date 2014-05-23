@@ -37,3 +37,6 @@ media/
 
 # bootstrap
 .DS_Store
+
+# bower
+bower_components/
