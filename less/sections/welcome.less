@@ -1,3 +1,6 @@
+/* All CSS before section-specific styles can potentially be used universally accross all sections */
+
+// Universal background image styles //
 .bg-image {
 	position: absolute;
 	z-index: -1;
@@ -9,13 +12,18 @@
 	background-repeat: repeat;
 }
 
+// Dark overlay for background image //
 .dark-overlay {
 	background-color: rgba(0,0,0,0.5);
 }
 
+
+//-----------------------------------//
+//--------- WELCOME SECTION ---------//
+//-----------------------------------//
+
 section.welcome {
 	padding: 100px 0;
-	text-align: center;
 
 	p, h1, h2, h3, h4, h5, h6 {
 		color: #fff;
@@ -33,7 +41,7 @@ section.welcome {
 		font-size: 18px;
 		font-weight: 100;
 	}
-
+	
 	.bg-image {
 		background-image: url(http://pamukovic.com/demo/t-two/images/slide-2.jpg);
 	}
