@@ -1,0 +1,33 @@
+/* All styles before section-specific styles can potentially be used universally accross all sections */
+
+// Background color classes //
+.bg-gray-dark { background-color: #1D1D25; }
+.bg-white { background-color: #fff; }
+
+// Default section block padding //
+.block {
+	padding: 100px 0;
+}
+
+//-------------------------------------//
+//--------- BASIC CTA SECTION ---------//
+//-------------------------------------//
+
+.cta {
+	p, h1 {
+		color: #fff;
+	}
+	h1 {
+		margin-top: 0;
+	}
+
+	button {
+		margin-top: 25px;
+	}
+}
+
+@media (max-width: @screen-sm-max) {
+	.cta {
+		text-align: center;
+	}
+}
