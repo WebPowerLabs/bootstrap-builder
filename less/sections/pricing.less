@@ -1,0 +1,93 @@
+/* All CSS before section-specific styles can potentially be used universally accross all sections */
+
+// Universal background image styles //
+.bg-image {
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 50%;
+	background-repeat: repeat;
+}
+
+// Background color classes //
+.bg-gray-light { background-color: #f1f1f1; }
+.bg-white { background-color: #fff; }
+
+// Dark overlay for background image //
+.dark-overlay {
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+//-----------------------------------//
+//--------- PRICING SECTION ---------//
+//-----------------------------------//
+
+section.pricing {
+	.dark-overlay {
+		padding-top: 80px;
+		height: 500px;
+	}
+
+	p, h1, h4 {
+		color: #fff;
+	}
+	h3 {
+		margin: 50px 0 20px;
+	}
+	h4 {
+		letter-spacing: 10px;
+		text-transform: uppercase;
+	}
+
+	.section-title {
+		margin-bottom: 20px;
+		font-size: 50px;
+	}
+	.section-description {
+		font-size: 18px;
+		font-weight: 100;
+	}
+	
+	&.bg-image {
+		background-image: url(http://pamukovic.com/demo/t-two/images/slide-2.jpg);
+	}
+
+	a.price-table {
+		display: block;
+		margin-top: -378px;
+		padding: 30px 15px 20px;
+		text-decoration: none;
+		background-color: fade(#1D1D25, 80%);
+
+		h1.price {
+			margin: 35px 0;
+
+			span.currency {
+				font-size: 20px;
+				vertical-align: top;
+			}
+			span.amount {
+				font-size: 90px;
+			}
+			span.time {
+				font-size: 20px;
+			}
+		}
+
+		p {
+			font-style: italic;
+		}
+	}
+	ul.features li {
+		padding: 16px;
+		text-align: center;
+
+		&.subtle {
+			background: #f8f8f8;
+		}
+	}
+}
