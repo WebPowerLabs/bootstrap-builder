@@ -24,6 +24,9 @@ Setup
 	# create a new section
 	$ ./mksection.sh
 
+	# create a new component
+	$ ./mkcomponent.sh
+
 	# compile themes
 	$ ./css.sh
 
@@ -31,11 +34,12 @@ Setup
 Themes
 ------
 
-Themes are made up of three files found in `./less/themes/theme-name/`:
+Themes are made up of four files found in `./less/themes/theme-name/`:
 
 * `router.less` # imports the theme variables and app router and any custom components for the theme
 * `variables.less` # a new bootstrap variables file you can customize for the theme
 * `custom.less` # any theme specific less can be placed here though consider making a new section before resorting to this
+* `section-variables` # variables that sections make use of, copies from `template/section-variables.less` and has no backwards compatibility so be sure to add new section variables to all themes and the template.
 
 
 Sections
