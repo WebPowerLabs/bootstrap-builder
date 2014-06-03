@@ -1,0 +1,25 @@
+@iphone-showcase-img-path: "@{component-img-path}iphone-showcase/";
+
+.showcase-iphone {
+	position: absolute;
+	width: 100%;
+	display: block;
+
+	.iphone-screenshot {
+		width: 100%;
+		height: auto;
+		padding: 23.2% 19.6% 40% 16.6%;
+
+		& + .iphone-display {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url("@{iphone-showcase-img-path}iphone-5s-gold.png");
+			width: 100%;
+			height: 100%;
+			background-position: 0 0;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
