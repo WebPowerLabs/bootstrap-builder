@@ -1,0 +1,57 @@
+/* All CSS before section-specific styles can potentially be used universally accross all sections */
+
+// Background color classes //
+.bg-gray-light { background-color: #f1f1f1; }
+.bg-white { background-color: #fff; }
+
+// Dark overlay for background image //
+.dark-overlay {
+	background-color: rgba(0,0,0,0.5);
+}
+
+a {
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
+}
+
+//---------------------------------------//
+//------ FULL-WIDTH SLIDER SECTION ------//
+//---------------------------------------//
+
+section.slider-fullwidth {
+	.carousel-inner {
+		img {
+			width: 100%;
+		}
+	}
+	.carousel-control {
+		.icon-prev, .icon-next {
+			font-size: 60px;
+		}
+	}
+	.carousel-caption {
+		padding-bottom: 400px;
+	}
+}
+
+@media (max-width: @screen-md-max) {
+	section.slider-fullwidth {
+		.carousel-caption {
+			padding-bottom: 300px;
+		}
+	}
+}
+@media (max-width: @screen-sm-max) {
+	section.slider-fullwidth {
+		.carousel-caption {
+			padding-bottom: 200px;
+		}
+	}
+}
+@media (max-width: @screen-xs-max) {
+	section.slider-fullwidth {
+		.carousel-caption {
+			padding-bottom: 30px;
+		}
+	}
+}
