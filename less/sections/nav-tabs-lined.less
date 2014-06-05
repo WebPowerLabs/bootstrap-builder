@@ -1,0 +1,67 @@
+//@border-radius-none   
+//@transition-speed-base
+//@brand-bg-font-color
+
+// Nav Tabs Lined
+// -------------------------
+// Adds a colored top border to navs
+
+
+.tab-color-varient(@color, @nav-bg-color) {
+  border-width: 0;
+  line-height: @line-height-base;
+  > a {
+    // override bootstraps margins and borders
+    margin-right: 0;
+    border-width: 0;
+    border-top: 2px solid @color;
+    border-radius: @border-radius-none @border-radius-none 0 0;
+    color: contrast(@nav-bg-color, @gray-light, @brand-white-soft, 90%);
+    .transition(@transition-speed-base);
+    &:hover {
+      background-color: @color;
+      color: contrast(@color, @brand-gray-soft, @brand-white-soft, 80%);
+      text-shadow: desaturate(@color, 50%) 0px 1px 0px;
+    }
+  }
+  // Active state, and its :hover to override normal :hover
+  &.active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: contrast(@color, @brand-gray-soft, @brand-white-soft, 80%);
+      background-color: @color;
+      // bootstraps tabs will set border to someting else so we override
+      border-width: 0;
+      border-top: 2px solid @color;
+      cursor: default;
+      text-shadow: desaturate(@color, 50%) 0px 1px 0px;
+    }
+  }
+}
+
+.nav-tabs-lined-varient(@nav-bg-color) {
+  border-bottom-width: 0;
+  & > li {
+    &.tab-primary {.tab-color-varient(@brand-primary, @nav-bg-color);}
+    &.tab-success {.tab-color-varient(@brand-success, @nav-bg-color);}
+    &.tab-info {.tab-color-varient(@brand-info, @nav-bg-color);}
+    &.tab-warning {.tab-color-varient(@brand-warning, @nav-bg-color);}
+    &.tab-danger {.tab-color-varient(@brand-danger, @nav-bg-color);}
+  }
+}
+
+.nav-tabs-lined {
+  .nav-tabs-lined-varient(@body-bg);
+}
+
+.navbar-default {
+  .nav-tabs-lined {
+    .nav-tabs-lined-varient(@navbar-default-bg);
+  }
+}
+.navbar-inverse {
+  .nav-tabs-lined {
+    .nav-tabs-lined-varient(@navbar-inverse-bg);
+  }
+}
