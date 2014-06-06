@@ -13,8 +13,8 @@
 }
 
 // Dark overlay for background image //
-.dark-overlay {
-	background-color: rgba(0,0,0,0.5);
+.primary-overlay {
+	background-color: fadeout(@brand-primary, 30%);
 }
 
 
@@ -28,12 +28,9 @@ section.welcome {
 	p, h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 	}
-	h4 {
-		font-weight: 300;
-		letter-spacing: 2px;
-	}
 	.section-title {
 		margin-bottom: 20px;
+		font-weight: 500;
 		font-size: 60px;
 	}
 	.section-description {

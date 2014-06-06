@@ -1,7 +1,7 @@
 /* All CSS before section-specific styles can potentially be used universally accross all sections */
 
 // Background color classes //
-.bg-gray-light { background-color: #f1f1f1; }
+.bg-white-soft { background-color: @brand-white-soft; }
 .bg-white { background-color: #fff; }
 
 
@@ -16,6 +16,7 @@
 		}
 
 		i {
+			color: @brand-primary;
 			font-size: 60px;
 		}
 
@@ -23,7 +24,7 @@
 			margin-top: 0;
 		}
 		hr {
-			border-color: #ddd;
+			border-color: darken(@brand-white-soft, 10%);
 		}
 	}
 }

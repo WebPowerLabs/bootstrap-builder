@@ -13,7 +13,7 @@
 }
 
 // Background color classes //
-.bg-gray-light { background-color: #f1f1f1; }
+.bg-white-soft { background-color: @brand-white-soft; }
 .bg-white { background-color: #fff; }
 
 // Dark overlay for background image //
@@ -27,7 +27,7 @@
 //-----------------------------------//
 
 section.pricing {
-	.dark-overlay {
+	.primary-overlay {
 		padding-top: 80px;
 		height: 500px;
 	}
@@ -61,7 +61,7 @@ section.pricing {
 		margin-top: -378px;
 		padding: 30px 15px 20px;
 		text-decoration: none;
-		background-color: fade(#1D1D25, 80%);
+		background-color: fade(@gray-darker, 80%);
 
 		h1.price {
 			margin: 35px 0;
@@ -87,7 +87,7 @@ section.pricing {
 		text-align: center;
 
 		&.subtle {
-			background: #f8f8f8;
+			background: @brand-white-soft;
 		}
 	}
 }
