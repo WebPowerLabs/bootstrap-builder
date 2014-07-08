@@ -1,0 +1,24 @@
+/* All styles before section-specific styles can potentially be used universally accross all sections */
+
+// Background color classes //
+.bg-primary-dark { background-color: @brand-primary-dark; }
+.bg-primary-darker { background-color: @brand-primary-darker; }
+
+// Text color classes //
+.text-white { color: #fff; }
+
+//--------------------------------------//
+//---------- COPYRIGHT FOOTER ----------//
+//--------------------------------------//
+
+.copyright-footer {
+	padding: 40px 0;
+	.copyright { text-align: left; }
+	.developer { text-align: right; }
+}
+@media (max-width: @screen-xs-max) {
+	.copyright-footer {
+		.copyright,
+		.developer { text-align: center; }
+	}
+}

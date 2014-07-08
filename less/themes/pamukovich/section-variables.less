@@ -1,9 +1,23 @@
-@brand-white-soft: hardlight(@brand-primary, #f7f7f7);
-@brand-gray-soft: hardlight(@brand-primary, @gray-light);
+//-----------------------------------------//
+//----------- SECTION VARIABLES -----------//
+//-----------------------------------------//
 
+// Colors
+// --------------------------------------------------
+@brand-primary-lighter: hardlight(@brand-primary, #fafafa);
+@brand-primary-light: hardlight(@brand-primary, @gray-lighter);
+@brand-primary-dark: hardlight(@brand-primary, @gray-dark);
+@brand-primary-darker: darken(hardlight(@brand-primary, @gray-dark), 5%);
+
+
+// Components
+// --------------------------------------------------
 @border-radius-none: 0;
 @brand-bg-font-color: #fff;
 
+
+// Transitions
+// --------------------------------------------------
 @transition-speed-base: 0.5s;
 @transition-speed-fast: 0.25s;
 @transition-speed-slow: 1s;
