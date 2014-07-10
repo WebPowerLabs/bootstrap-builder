@@ -17,21 +17,20 @@
 .bg-white { background-color: #fff; }
 
 // Dark overlay for background image //
-.dark-overlay {
-	background-color: rgba(0,0,0,0.5);
-}
+.dark-overlay { background-color: rgba(0,0,0,0.5); }
 
 
 //-----------------------------------//
 //--------- PRICING SECTION ---------//
 //-----------------------------------//
 
-section.pricing {
+.pricing {
 	.primary-overlay {
 		padding-top: 80px;
 		height: 500px;
 	}
-	p, h1, h4 { color: #fff; }
+	.section-title,
+	.price-table { color: #fff; }
 	h3 { margin: 50px 0 20px; }
 	h4 {
 		letter-spacing: 10px;
@@ -52,7 +51,7 @@ section.pricing {
 		padding: 30px 15px 20px;
 		text-decoration: none;
 		background-color: fade(@gray-darker, 80%);
-		h1.price {
+		.price {
 			margin: 35px 0;
 			span.currency {
 				font-size: 20px;

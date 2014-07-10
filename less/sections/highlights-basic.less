@@ -1,0 +1,41 @@
+.bg-secondary { background-color: @brand-success; }
+
+
+//--- Enter Content Box Overlay height for calculating
+//--- negative margin-top and preceding section padding-bottom
+//------------------------------------------------------------
+@box-height: 218px;
+@box-margin-top: -(@box-height / 2);
+@box-padding-bottom: (@box-height / 2) + 40;
+
+
+//--------------------------------------------//
+//--------- BASIC HIGHLIGHTS SECTION ---------//
+//--------------------------------------------//
+.highlights-basic {
+	&.block {
+		padding: 40px 0;
+		padding-bottom: @box-padding-bottom;}
+	.highlight {
+		font-weight: 300;
+		text-transform: uppercase;
+		margin: 40px 0;
+	}
+}
+
+//---------------------------------------//
+//--------- CONTENT BOX OVERLAY ---------//
+//---------------------------------------//
+.content-box-overlay {
+	.box-body {
+		text-align: center;
+		padding: 55px 10%;
+		margin-top: @box-margin-top;
+		box-shadow: 2px 2px 8px fadeout(#000, 40%);
+		.text-content {
+			font-weight: 300;
+			line-height: 1.5em;
+			margin: 0;
+		}
+	}
+}
