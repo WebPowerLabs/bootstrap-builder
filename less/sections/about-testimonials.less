@@ -3,6 +3,7 @@
 //----------------------------------------------//
 .about-testimonials {
 	&.block { padding-bottom: 0; }
+	.about { text-align: left; }
 	.testimonials {
 		.section-title { line-height: 1.4em; }
 	}
@@ -15,5 +16,10 @@
 	.quote-text {
 		margin: 0;
 		font-weight: 300;
+	}
+}
+@media (max-width: @screen-sm-max) {
+	.about-testimonials {
+		.about { text-align: center; }
 	}
 }
