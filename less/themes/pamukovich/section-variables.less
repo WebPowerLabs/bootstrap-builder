@@ -4,17 +4,28 @@
 
 // Colors
 // --------------------------------------------------
-@brand-primary-lighter: hardlight(@brand-primary, #fafafa);
-@brand-primary-light: hardlight(@brand-primary, @gray-lighter);
+@brand-primary-soft: hardlight(@brand-primary, #fafafa);
+@brand-primary-lighter: hardlight(@brand-primary, @gray-lighter);
+@brand-primary-light: hardlight(@brand-primary, darken(@gray-lighter, 12.5%));
 @brand-primary-dark: hardlight(@brand-primary, @gray-dark);
-@brand-primary-darker: darken(hardlight(@brand-primary, @gray-dark), 5%);
+@brand-primary-darker: hardlight(@brand-primary, darken(@gray-dark, 7.5%));
 
+@brand-secondary-soft: hardlight(@brand-secondary, #fafafa);
+@brand-secondary-lighter: hardlight(@brand-secondary, @gray-lighter);
+@brand-secondary-light: hardlight(@brand-secondary, darken(@gray-lighter, 12.5%));
+@brand-secondary-dark: hardlight(@brand-secondary, @gray-dark);
+@brand-secondary-darker: hardlight(@brand-secondary, darken(@gray-dark, 7.5%));
+
+@brand-accent-soft: hardlight(@brand-accent, #fafafa);
+@brand-accent-lighter: hardlight(@brand-accent, @gray-lighter);
+@brand-accent-light: hardlight(@brand-accent, darken(@gray-lighter, 12.5%));
+@brand-accent-dark: hardlight(@brand-accent, @gray-dark);
+@brand-accent-darker: hardlight(@brand-accent, darken(@gray-dark, 7.5%));
 
 // Components
 // --------------------------------------------------
 @border-radius-none: 0;
 @brand-bg-font-color: #fff;
-
 
 // Transitions
 // --------------------------------------------------
