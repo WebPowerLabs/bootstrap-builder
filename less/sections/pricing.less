@@ -12,37 +12,26 @@
 	background-repeat: repeat;
 }
 
-// Background color classes //
-.bg-gray-light { background-color: #f1f1f1; }
-.bg-white { background-color: #fff; }
-
 // Dark overlay for background image //
-.dark-overlay {
-	background-color: rgba(0,0,0,0.5);
-}
+.dark-overlay { background-color: fadeout(#000, 60%); }
 
 
 //-----------------------------------//
 //--------- PRICING SECTION ---------//
 //-----------------------------------//
 
-section.pricing {
-	.dark-overlay {
+.pricing {
+	.primary-overlay {
 		padding-top: 80px;
 		height: 500px;
 	}
-
-	p, h1, h4 {
-		color: #fff;
-	}
-	h3 {
-		margin: 50px 0 20px;
-	}
+	.section-title,
+	.price-table { color: #fff; }
+	h3 { margin: 50px 0 20px; }
 	h4 {
 		letter-spacing: 10px;
 		text-transform: uppercase;
 	}
-
 	.section-title {
 		margin-bottom: 20px;
 		font-size: 50px;
@@ -51,55 +40,35 @@ section.pricing {
 		font-size: 18px;
 		font-weight: 100;
 	}
-	
-	&.bg-image {
-		background-image: url(http://pamukovic.com/demo/t-two/images/slide-2.jpg);
-	}
-
+	&.bg-image { background-image: url(http://pamukovic.com/demo/t-two/images/slide-2.jpg); }
 	a.price-table {
 		display: block;
-		margin-top: -378px;
+		margin-top: -358px;
 		padding: 30px 15px 20px;
 		text-decoration: none;
-		background-color: fade(#1D1D25, 80%);
-
-		h1.price {
+		background-color: fade(@gray-darker, 80%);
+		.price {
 			margin: 35px 0;
-
 			span.currency {
 				font-size: 20px;
 				vertical-align: top;
 			}
-			span.amount {
-				font-size: 90px;
-			}
-			span.time {
-				font-size: 20px;
-			}
+			span.amount { font-size: 90px; }
+			span.time { font-size: 20px; }
 		}
-
-		p {
-			font-style: italic;
-		}
+		p { font-style: italic; }
 	}
 	ul.features li {
 		padding: 16px;
 		text-align: center;
-
-		&.subtle {
-			background: #f8f8f8;
-		}
+		&.subtle { background: @brand-primary-lighter; }
 	}
 }
-
 @media (max-width: @screen-sm-max) {
 	section.pricing {
 		a.price-table {
 			margin-top: 0;
-
-			&.first {
-				margin-top: -378px;
-			}
+			&.first { margin-top: -378px; }
 		}
 	}
 }

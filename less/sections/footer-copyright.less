@@ -1,0 +1,21 @@
+/* All styles before section-specific styles can potentially be used universally accross all sections */
+
+// Text color classes //
+.text-white { color: #fff; }
+
+//--------------------------------------//
+//---------- COPYRIGHT FOOTER ----------//
+//--------------------------------------//
+
+.copyright-footer {
+	padding: 40px 0 30px;
+	.copyright { text-align: left; }
+	.developer { text-align: right; }
+	a:hover { color: lighten(@brand-primary, 10%) }
+}
+@media (max-width: @screen-xs-max) {
+	.copyright-footer {
+		.copyright,
+		.developer { text-align: center; }
+	}
+}

@@ -16,11 +16,11 @@
     border-width: 0;
     border-top: 2px solid @color;
     border-radius: @border-radius-none @border-radius-none 0 0;
-    color: contrast(@nav-bg-color, @gray-light, @brand-white-soft, 90%);
+    color: contrast(@nav-bg-color, @gray-light, @brand-primary-lighter, 90%);
     .transition(@transition-speed-base);
     &:hover {
       background-color: @color;
-      color: contrast(@color, @brand-gray-soft, @brand-white-soft, 80%);
+      color: contrast(@color, @brand-primary-light, @brand-primary-lighter, 80%);
       text-shadow: desaturate(@color, 50%) 0px 1px 0px;
     }
   }
@@ -29,7 +29,7 @@
     &,
     &:hover,
     &:focus {
-      color: contrast(@color, @brand-gray-soft, @brand-white-soft, 80%);
+      color: contrast(@color, @brand-primary-light, @brand-primary-lighter, 80%);
       background-color: @color;
       // bootstraps tabs will set border to someting else so we override
       border-width: 0;

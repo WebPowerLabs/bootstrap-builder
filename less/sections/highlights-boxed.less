@@ -1,0 +1,51 @@
+//--------------------------------------------//
+//--------- BASIC HIGHLIGHTS SECTION ---------//
+//--------------------------------------------//
+.highlights-boxed {
+	.section-subtitle {
+		margin: 60px 0 50px;
+		line-height: 1.4em;
+	}
+	.highlight-box {
+		border: solid 4px #139e97;
+		background-color: #fff;
+		margin-bottom: 70px;
+		padding: 30px 9%;
+		box-shadow: 1px 1px 8px fadeout(#000, 50%);
+		&.testimonial {
+			color: #fff;
+			background-color: #7fc2aa;
+			border: solid 4px #560e2c;
+		}
+	}
+	.box-icon {
+		position: absolute;
+		top: -30px;
+		left: -22px;
+		max-height: 110px;
+	}
+	.box-count {
+		color: #fff;
+		position: absolute;
+		margin: 0;
+		top: 9px;
+		left: 2px;
+		font-weight: 300;
+	}
+	.box-title {
+		margin: 5px 0 20px;
+		font-weight: 300;
+		span {
+			font-size: 2em;
+			text-decoration: underline;
+			font-weight: 400;
+		}
+	}
+}
+@media (max-width: @screen-xs-max) {
+	.highlights-boxed {
+		.highlight-box { margin-left: 20px; }
+		.box-icon { left: 0; }
+		.box-count { left: 25px; }
+	}
+}

@@ -22,8 +22,8 @@
 @brand-danger:          #d9534f;
 
 // Theme Colors
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
+@brand-primary:         #306d3b;
+@brand-secondary:		#5cb85c;
 @brand-accent:			#d9534f;
 
 
@@ -46,7 +46,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Lato", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -148,9 +148,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              #fff;
+@btn-default-bg:                 transparent;
+@btn-default-border:             #fff;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -191,7 +191,7 @@
 //** `<input>` border radius
 @input-border-radius:            @border-radius-base;
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             lighten(@brand-primary, 15%);
 
 //** Placeholder text color
 @input-color-placeholder:        @gray-light;
@@ -375,7 +375,7 @@
 
 // Inverted navbar
 // Reset inverted navbar basics
-@navbar-inverse-color:                      lighten(@gray-light, 12%);
+@navbar-inverse-color:                      @gray-light;
 @navbar-inverse-bg:                         #222;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
@@ -851,3 +851,12 @@
 @hr-border:                   @gray-lighter;
 
 
+//== Miscellaneous
+//
+//##
+
+//** Horizontal line color.
+@hr-border:                   @gray-lighter;
+
+//** Horizontal offset for forms and lists.
+@component-offset-horizontal: 180px;

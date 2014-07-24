@@ -1,0 +1,67 @@
+//--- Enter Package box height for calculating negative margin-top
+//------------------------------------------------------------
+@package-height: 59px;
+
+//--------------------------------------------//
+//--------- BASIC HIGHLIGHTS SECTION ---------//
+//--------------------------------------------//
+.pricing-2 {
+	&.block { padding: 20px 0 80px; }
+	.price-wrapper { box-shadow: 1px 1px 6px fadeout(#000, 70%); }
+	.price-table {
+		margin-top: (@package-height / 2) + 60;
+		padding: 30px 15px 20px;
+		color: #fff;
+		text-decoration: none;
+		background-color: fade(@gray-darker, 80%);
+	}
+	.package {
+		margin-top: -@package-height;
+		padding: 10px 0;
+		box-shadow: 1px 1px 8px fadeout(#000, 50%);
+		.title {
+			letter-spacing: 10px;
+			text-transform: uppercase;
+		}
+	}
+	.sale {
+		margin-top: @package-height / 2;
+		color: lighten(@brand-danger, 25%);
+		text-decoration: line-through;
+	}
+	.price {
+		margin: 20px 0;
+		span {
+			&.currency {
+				margin-right: -5px;
+				font-size: 28px;
+				vertical-align: top;
+			}
+			&.amount { font-size: 90px; }
+			&.decimal {
+				margin-left: -5px;
+				font-size: 28px;
+			}
+		}
+	}
+	.disclaimer { font-style: italic; }
+	ul.features li {
+		padding: 16px;
+		text-align: center;
+		&.odd { background-color: @table-bg-accent; }
+		&.even { background-color: darken(@table-bg-accent, 5%); }
+	}
+	.buy-button {
+		margin: 15px 0 0;
+		padding: 15px 20%;
+		text-transform: uppercase;
+		font-size: 28px;
+		font-weight: 300;
+		box-shadow: 1px 1px 8px fadeout(#000, 50%);
+		&:hover {
+			box-shadow: 2px 2px 14px fadeout(#000, 20%);
+			background-color: @btn-danger-bg;
+			border-color: @btn-danger-border;
+		}
+	}
+}

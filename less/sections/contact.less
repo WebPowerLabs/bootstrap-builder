@@ -1,36 +1,31 @@
 /* All styles before section-specific styles can potentially be used universally accross all sections */
 
-// Background color classes //
-.bg-gray-light { background-color: #f1f1f1; }
-.bg-white { background-color: #fff; }
-
 // Default section block padding //
-.block {
-	padding: 100px 0;
-}
+.block { padding: 80px 0; }
 
 //-----------------------------------//
 //--------- WELCOME SECTION ---------//
 //-----------------------------------//
 
-section.contact {
-	.section-title {
-		margin: 40px 0 45px;
-	}
-
+.contact {
+	.section-title { margin-bottom: 40px }
 	// Contact information //
-	a {
+	.phone,
+	.email {
+		display: block;
+		margin-bottom: 20px;
 		font-size: 24px;
-		font-weight: 100;
+		font-weight: 300;
+		i {
+			padding-right: 15px;
+			font-size: 30px;
+			vertical-align: middle;
+		}
 	}
-	// Contact info icons //
-	i.fa {
-		padding-right: 15px;
-		font-size: 30px;
-		vertical-align: middle;
-	}
-
-	.contact-form {
-		padding-top: 50px;
+	.contact-form { padding-top: 40px; }
+	.form-control:focus {
+		border-color: #fff;
+		-webkit-box-shadow: inset 0 1px 1px fadeout(#000, 92.5%), 0 0 8px fadeout(#fff, 30%);
+		box-shadow: inset 0 1px 1px fadeout(#000, 92.5%), 0 0 8px fadeout(#fff, 30%);
 	}
 }

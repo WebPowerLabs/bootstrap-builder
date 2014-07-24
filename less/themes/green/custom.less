@@ -1,0 +1,42 @@
+//-------------------------------------------------//
+//----------- "GREEN" THEME CUSTOM LESS -----------//
+//-------------------------------------------------//
+
+
+//----- Typography
+//-----------------------------------------
+
+//** Links
+a {
+	-webkit-transition: all @transition-speed-fast ease;
+	transition: all @transition-speed-fast ease;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+//** Section Titles
+.section-title {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.section-subtitle {
+	font-weight: 300;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+//----- Buttons
+//-----------------------------------------
+.btn {
+	text-transform: uppercase;
+	-webkit-transition: all @transition-speed-fast ease;
+	transition: all @transition-speed-fast ease;
+
+	//** Default Button
+	&.btn-default {
+		border: 2px solid @btn-default-border;
+	}
+}

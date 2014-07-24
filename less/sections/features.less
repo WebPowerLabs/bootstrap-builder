@@ -1,17 +1,17 @@
 /* All styles before section-specific styles can potentially be used universally accross all sections */
 
 // Background color classes //
-.bg-gray-light { background-color: #f1f1f1; }
+.bg-primary-lighter { background-color: @brand-primary-lighter; }
 .bg-white { background-color: #fff; }
 
 // Default section block padding //
 .block {
-	padding: 100px 0;
+	padding: 80px 0;
 }
 
-//-----------------------------------//
-//--------- WELCOME SECTION ---------//
-//-----------------------------------//
+//------------------------------------//
+//--------- FEATURES SECTION ---------//
+//------------------------------------//
 
 .features {
 	.feature-item {
@@ -19,19 +19,18 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	.section-title h2 {
-		margin-bottom: 10px;
-		color: #F7465B;
+	.section-title {
+		margin: 0 0 10px;
+		color: @brand-primary;
 		letter-spacing: 3px;
-		font-weight: bold;
+		font-weight: 500;
 		font-size: 34px;
-		line-height: 24px;
+		line-height: 28px;
 
 		span {
+			margin: 8px 0 30px;
 			display: block;
-			margin-top: 8px;
 			color: #000;
-			font-weight: 600;
 			font-style: normal;
 			font-size: 50px;
 		}
@@ -49,8 +48,8 @@
 		width: 90px;
 		height: 90px;
 		border-radius: 100%;
-		background: #F7465B;
-		color: #FFFFFF;
+		background: @brand-primary;
+		color: #fff;
 		text-align: center;
 		font-size: 50px;
 		line-height: 90px;

@@ -7,17 +7,24 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-darker:            lighten(#000, 13.5%); // #222
-@gray-dark:              lighten(#000, 20%);   // #333
-@gray:                   lighten(#000, 33.5%); // #555
-@gray-light:             lighten(#000, 46.7%); // #777
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+@gray-base:		  		#000;
+@gray-darker:          	lighten(@gray-base, 13.5%); // #222
+@gray-dark:            	lighten(@gray-base, 20%);   // #333
+@gray:                 	lighten(@gray-base, 33.5%); // #555
+@gray-light:           	lighten(@gray-base, 46.7%); // #777
+@gray-lighter:         	lighten(@gray-base, 93.5%); // #eee
+@gray-soft:				lighten(@gray-base, 97%); 	// #f7f7f7;
 
-@brand-primary:         #428bca;
+// Bootstrap default alert colors
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
+
+// Theme Colors
+@brand-primary:         #428bca;
+@brand-secondary:       #5cb85c;
+@brand-accent:			#d9534f;
 
 
 //== Scaffolding

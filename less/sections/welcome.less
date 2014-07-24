@@ -1,5 +1,31 @@
 /* All CSS before section-specific styles can potentially be used universally accross all sections */
 
+// Background color classes //
+.bg-white { background-color: #fff; }
+.bg-soft { background-color: @gray-soft; }
+
+.bg-primary-soft { background-color: @brand-primary-soft; }
+.bg-primary-lighter { background-color: @brand-primary-lighter; }
+.bg-primary-light { background-color: @brand-primary-light; }
+.bg-primary { background-color: @brand-primary; }
+.bg-primary-dark { background-color: @brand-primary-dark; }
+.bg-primary-darker { background-color: @brand-primary-darker; }
+
+.bg-secondary-soft { background-color: @brand-secondary-soft; }
+.bg-secondary-lighter { background-color: @brand-secondary-lighter; }
+.bg-secondary-light { background-color: @brand-secondary-light; }
+.bg-secondary { background-color: @brand-secondary; }
+.bg-secondary-dark { background-color: @brand-secondary-dark; }
+.bg-secondary-darker { background-color: @brand-secondary-darker; }
+
+.bg-accent-soft { background-color: @brand-accent-soft; }
+.bg-accent-lighter { background-color: @brand-accent-lighter; }
+.bg-accent-light { background-color: @brand-accent-light; }
+.bg-accent { background-color: @brand-accent; }
+.bg-accent-dark { background-color: @brand-accent-dark; }
+.bg-accent-darker { background-color: @brand-accent-darker; }
+
+
 // Universal background image styles //
 .bg-image {
 	position: absolute;
@@ -12,28 +38,20 @@
 	background-repeat: repeat;
 }
 
-// Dark overlay for background image //
-.dark-overlay {
-	background-color: rgba(0,0,0,0.5);
-}
+// Primary color overlay for background images //
+.primary-overlay { background-color: fadeout(@brand-primary, 30%); }
 
 
 //-----------------------------------//
 //--------- WELCOME SECTION ---------//
 //-----------------------------------//
 
-section.welcome {
+.welcome {
 	padding: 150px 0 200px;
-
-	p, h1, h2, h3, h4, h5, h6 {
-		color: #fff;
-	}
-	h4 {
-		font-weight: 300;
-		letter-spacing: 2px;
-	}
+	p, h1, h2, h3, h4, h5, h6 { color: #fff; }
 	.section-title {
 		margin-bottom: 20px;
+		font-weight: 500;
 		font-size: 60px;
 	}
 	.section-description {
