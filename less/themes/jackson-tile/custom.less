@@ -197,11 +197,25 @@ textarea:-ms-input-placeholder {
 .footer-widgets {
 	padding: 80px 0 100px;
 	&.bg-primary { background-color: darken(@brand-primary, 4%) }
+	hr {
+		height: 1px;
+		border: none;
+		background: linear-gradient(90deg, fadeout(#fff, 60%) 60%, transparent);
+	}
+	.widget {
+		.form-control {
+			color: #fff;
+			border-color: rgba(255,255,255,0.1);
+			&:focus { box-shadow: 1px 1px 12px rgba(0,0,0,0.5); }
+		}
+	}
 	.social-icons i {
-		transition: all 0.2s ease-in-out;
-		-webkit-transition: all 0.2s ease-in-out;
-		-moz-transition: all 0.2s ease-in-out;
-		-o-transition: all 0.2s ease-in-out;
+		margin-right: 7px;
+		//Transitions
+			transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
 	}
 }
 
@@ -209,5 +223,7 @@ textarea:-ms-input-placeholder {
 //---------- COPYRIGHT FOOTER ----------//
 //--------------------------------------//
 .copyright-footer {
-
+	&.bg-primary-dark { background-color: lighten(@brand-primary-dark, 5%); }
+	.copyright,
+	.developer { margin-bottom: 0; }
 }
