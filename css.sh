@@ -10,3 +10,6 @@ echo "done"
 echo -n "lessc green.css..."
 lessc -x ./less/themes/green/router.less > ./css/green.min.css
 echo "done"
+echo -n "lessc jackson-tile.css..."
+lessc -x ./less/themes/jackson-tile/router.less > ./css/jackson-tile.min.css
+echo "done"

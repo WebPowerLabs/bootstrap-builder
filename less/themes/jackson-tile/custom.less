@@ -1,0 +1,213 @@
+//----------------------------------------//
+//--------- GENERAL THEME STYLES ---------//
+//----------------------------------------//
+
+// ---- Links & Hover Transitions
+//-------------------------------
+a:hover { text-decoration: none; }
+a,
+.btn {
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+}
+
+// ---- Buttons
+//-------------------
+.btn {
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 0;
+	border: none;
+}
+
+// ---- Forms
+//-------------------
+.form-control {
+	border-radius: 0;
+	color: @brand-primary;
+	font-weight: 300;
+	background-color: transparent;
+	border: 3px solid @brand-primary;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	&:focus {
+		border-color: @brand-primary;
+		-webkit-box-shadow: 1px 1px 10px fadeout(#000, 60%);
+		box-shadow: 1px 1px 10px fadeout(#000, 60%);
+	}
+}
+input::-webkit-input-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+	font-weight: 300;
+}
+input:-moz-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+	font-weight: 300;
+}
+input::-moz-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+	font-weight: 300;
+}
+input:-ms-input-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+	font-weight: 300;
+}
+textarea::-webkit-input-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+}
+textarea:-moz-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+}
+textarea::-moz-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+}
+textarea:-ms-input-placeholder {
+	color: lighten(@brand-primary, 35%) !important;
+}
+
+.section-header {
+	padding: 10px 10% 0;
+	.section-title {
+		margin-bottom: 70px;
+		font-weight: bold;
+		text-transform: uppercase;
+		position: relative;
+		font-size: 1.3em;
+		letter-spacing: 2px;
+		span {
+			background: none repeat scroll 0 0 #fff;
+			display: inline-block;
+			padding: 0 15px;
+			position: relative;
+			z-index: 1;
+		}
+		&:after {
+			background: @brand-primary-soft;
+			content: "";
+			display: block;
+			height: 1px;
+			position: absolute;
+			top: 9px;
+			width: 100%;
+			z-index: 0;
+			//Gradient background
+				background: -webkit-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: -o-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: -moz-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+		}
+	}
+}
+.bg-primary-lighter {
+	.section-header {
+		.section-title span { background-color: @brand-primary-lighter }
+	}
+}
+
+//-----------------------------------//
+//--------- WELCOME SECTION ---------//
+//-----------------------------------//
+
+// Transparent Navbar
+//----------------------------------
+.navbar-transparent {
+	margin: 0 0 -100px 0;
+	padding: 20px 0 30px;
+	//Gradient background
+		background: -webkit-linear-gradient(fadeout(#000, 60%), transparent 90%);
+		background: -o-linear-gradient(fadeout(#000, 60%), transparent 90%);
+		background: -moz-linear-gradient(fadeout(#000, 60%), transparent 90%);
+		background: linear-gradient(fadeout(#000, 60%), transparent 90%);
+	.navbar-nav > li > a {
+		padding: 12px 25px;
+		letter-spacing: 3px;
+	}
+}
+
+.welcome {
+	padding: 185px 0 200px;
+	&.dark-overlay { background-color: rgba(0,0,0,0.3); }
+	.bg-image {
+		background-image: url(http://www.stupic.com/images/modern-elegant-residence-hall-lobby-with-colorful-wall-tile-on-wood-design.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;		
+	}
+	.section-title {
+		margin-bottom: 10px;
+		font-size: 64px;
+		font-weight: 300;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+	.section-subtitle {
+		margin-bottom: 40px;
+		font-weight: 300;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
+	.section-description {
+		padding: 0 12.5%;
+	}
+}
+
+//--------------------------------------------//
+//--------- SERVICES (ICONS) SECTION ---------//
+//--------------------------------------------//
+.services-icons {
+	&.block { padding: 100px 0; }
+	.content-box {
+		.icon {
+			margin-bottom: 15px;
+			background-color: transparent;
+			color: @brand-primary;
+			border: 9px solid @brand-primary;
+			border-radius: 0;
+			box-shadow: none;
+		}
+		.title {
+
+		}
+	}
+}
+
+//---------------------------------------------//
+//--------- CONSULTATION FORM SECTION ---------//
+//---------------------------------------------//
+.consult-form {
+	
+}
+
+//--------------------------------------//
+//--------- AFFILIATES SECTION ---------//
+//--------------------------------------//
+.affiliates {
+	&.block { padding: 95px 0 100px; }
+	.section-header {
+		.section-title { margin-bottom: 80px; }
+	}
+}
+
+//------------------------------------------//
+//--------- FOOTER WIDGETS SECTION ---------//
+//------------------------------------------//
+.footer-widgets {
+	padding: 80px 0 100px;
+	&.bg-primary { background-color: darken(@brand-primary, 4%) }
+	.social-icons i {
+		transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+	}
+}
+
+//--------------------------------------//
+//---------- COPYRIGHT FOOTER ----------//
+//--------------------------------------//
+.copyright-footer {
+
+}
