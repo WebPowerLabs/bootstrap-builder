@@ -13,3 +13,6 @@ echo "done"
 echo -n "lessc jackson-tile.css..."
 lessc -x ./less/themes/jackson-tile/router.less > ./css/jackson-tile.min.css
 echo "done"
+echo -n "lessc danmar.css..."
+lessc -x ./less/themes/danmar/router.less > ./css/danmar.min.css
+echo "done"

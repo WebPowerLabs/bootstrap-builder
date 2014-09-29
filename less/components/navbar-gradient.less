@@ -1,0 +1,120 @@
+
+// gradient navbar
+.navbar-gradient {
+  #gradient > .vertical-three-colors(transparent; @navbar-gradient-bg; 1%; transparent);
+  border-color: @navbar-gradient-border;
+  border-width: 0;
+
+  .navbar-brand {
+    color: @navbar-gradient-brand-color;
+    &:hover,
+    &:focus {
+      color: @navbar-gradient-brand-hover-color;
+      background-color: @navbar-gradient-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: @navbar-gradient-color;
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: @navbar-gradient-link-color;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: @navbar-gradient-link-hover-color;
+        background-color: @navbar-gradient-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-gradient-link-active-color;
+        background-color: @navbar-gradient-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-gradient-link-disabled-color;
+        background-color: @navbar-gradient-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: @navbar-gradient-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: @navbar-gradient-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: @navbar-gradient-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-gradient-border;
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-gradient-link-active-bg;
+        color: @navbar-gradient-link-active-color;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-gradient-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-gradient-link-hover-color;
+            background-color: @navbar-gradient-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-gradient-link-active-color;
+            background-color: @navbar-gradient-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-gradient-link-disabled-color;
+            background-color: @navbar-gradient-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-gradient-link-color;
+    &:hover {
+      color: @navbar-gradient-link-hover-color;
+    }
+  }
+
+}
