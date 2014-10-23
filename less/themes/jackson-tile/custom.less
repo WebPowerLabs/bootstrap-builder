@@ -1,20 +1,63 @@
-//----------------------------------------//
-//--------- GENERAL THEME STYLES ---------//
-//----------------------------------------//
+/* -------------------------------- */
+/* ------- UNIVERSAL STYLES ------- */
+/* -------------------------------- */
 
-// ---- Links & Hover Transitions
-//-------------------------------
-a:hover { text-decoration: none; }
-a,
-.btn {
-	transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
+/* ---- General
+/* ------------------------------- */
+.bg-secondary {
+	background-color: @brand-secondary;
+	.text-white();
 }
 
-// ---- Buttons
-//-------------------
+/* ---- Typography
+/* ------------------------------- */
+a {
+	.transition(color .25s ease-in-out);
+	&:hover { text-decoration: none; }
+}
+// Section Headers
+.section-header {
+	padding: 10px 10% 0;
+	.text-center();
+	.section-title {
+		margin-bottom: 70px;
+		font-weight: bold;
+		text-transform: uppercase;
+		position: relative;
+		font-size: 1.3em;
+		letter-spacing: 2px;
+		span {
+			background: none repeat scroll 0 0 #fff;
+			display: inline-block;
+			padding: 0 15px;
+			position: relative;
+			z-index: 1;
+		}
+		&:after {
+			background: @brand-primary-soft;
+			content: "";
+			display: block;
+			height: 1px;
+			position: absolute;
+			top: 9px;
+			width: 100%;
+			z-index: 0;
+			//Gradient background
+				background: -webkit-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: -o-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: -moz-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+				background: repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+		}
+	}
+}
+.bg-primary-lighter {
+	.section-header {
+		.section-title span { background-color: @brand-primary-lighter }
+	}
+}
+
+/* ---- Buttons
+/* ------------------------------- */
 .btn {
 	font-size: 16px;
 	line-height: 20px;
@@ -22,10 +65,13 @@ a,
 	text-transform: uppercase;
 	border-radius: 0;
 	border: none;
+	.transition(color .25s ease-in-out);
+	.transition(border-color .25s ease-in-out);
+	.transition(background-color .25s ease-in-out);
 }
 
-// ---- Forms
-//-------------------
+/* ---- Forms
+/* ------------------------------- */
 .form-control {
 	border-radius: 0;
 	color: @brand-primary;
@@ -69,51 +115,38 @@ textarea:-ms-input-placeholder {
 	color: lighten(@brand-primary, 35%) !important;
 }
 
-.section-header {
-	padding: 10px 10% 0;
-	.section-title {
-		margin-bottom: 70px;
-		font-weight: bold;
+/* ---- Navbars
+/* ------------------------------- */
+.navbar {
+	border: none;
+	border-radius: 0;
+	.navbar-brand {
+		color: #fff;
+		&:hover { color: #fff; }
+	}
+	.navbar-nav > li > a {
+		border: 1px solid transparent;
+		color: #fff;
+		letter-spacing: 3px;
+		padding: 12px 25px;
 		text-transform: uppercase;
-		position: relative;
-		font-size: 1.3em;
-		letter-spacing: 2px;
-		span {
-			background: none repeat scroll 0 0 #fff;
-			display: inline-block;
-			padding: 0 15px;
-			position: relative;
-			z-index: 1;
-		}
-		&:after {
-			background: @brand-primary-soft;
-			content: "";
-			display: block;
-			height: 1px;
-			position: absolute;
-			top: 9px;
-			width: 100%;
-			z-index: 0;
-			//Gradient background
-				background: -webkit-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
-				background: -o-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
-				background: -moz-repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
-				background: repeating-linear-gradient(90deg, transparent, @brand-primary-soft 20%, @brand-primary-soft 80%, transparent);
+		.transition(border-color .25s ease-in-out);
+		&:hover {
+			background-color: transparent;
+			border: 1px solid #fff;
+			color: #fff;
 		}
 	}
 }
-.bg-primary-lighter {
-	.section-header {
-		.section-title span { background-color: @brand-primary-lighter }
-	}
+// Default Navbar
+.navbar-default {
+	background-color: @brand-primary;
+	margin-bottom: 0;
+	.nav-top-shadow();
+	.navbar-brand { margin: 12px 0; }
+	.navbar-nav > li > a { margin: 15px 0 15px 15px; }
 }
-
-//-----------------------------------//
-//--------- WELCOME SECTION ---------//
-//-----------------------------------//
-
-// Transparent Navbar
-//----------------------------------
+// Navbar Transparent
 .navbar-transparent {
 	margin: 0 0 -100px 0;
 	padding: 20px 0 30px;
@@ -122,23 +155,27 @@ textarea:-ms-input-placeholder {
 		background: -o-linear-gradient(fadeout(#000, 60%), transparent 90%);
 		background: -moz-linear-gradient(fadeout(#000, 60%), transparent 90%);
 		background: linear-gradient(fadeout(#000, 60%), transparent 90%);
-	.navbar-nav > li > a {
-		padding: 12px 25px;
-		letter-spacing: 3px;
-	}
+	.navbar-nav > li > a { margin-left: 15px; }
 }
 
+/* ------------------------------ */
+/* ---------- SECTIONS ---------- */
+/* ------------------------------ */
+
+/* ---- Welcome
+/* ------------------------------- */
 .welcome {
-	padding: 185px 0 200px;
-	&.dark-overlay { background-color: rgba(0,0,0,0.3); }
-	.bg-image {
-		background-image: url(http://www.stupic.com/images/modern-elegant-residence-hall-lobby-with-colorful-wall-tile-on-wood-design.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;		
+	padding: 0;
+	background-image: url(http://www.stupic.com/images/modern-elegant-residence-hall-lobby-with-colorful-wall-tile-on-wood-design.jpg);
+	background-position: center;
+	background-size: cover;
+	.dark-overlay {
+		padding: 185px 0 200px;
+		background-color: rgba(0,0,0,0.3);
 	}
 	.section-title {
 		margin-bottom: 10px;
-		font-size: 64px;
+		font-size: 56px;
 		font-weight: 300;
 		letter-spacing: 3px;
 		text-transform: uppercase;
@@ -149,16 +186,23 @@ textarea:-ms-input-placeholder {
 		letter-spacing: 4px;
 		text-transform: uppercase;
 	}
-	.section-description {
-		padding: 0 12.5%;
+	.section-description { padding: 0; }
+}
+@media (min-width: @screen-sm-min) {
+	.welcome {
+		.section-title { font-size: 64px; }
+	}
+}
+@media (min-width: @screen-md-min) {
+	.welcome {
+		.section-description { padding: 0 12.5%; }
 	}
 }
 
-//--------------------------------------------//
-//--------- SERVICES (ICONS) SECTION ---------//
-//--------------------------------------------//
+/* ---- Services (Icons)
+/* ------------------------------- */
 .services-icons {
-	&.block { padding: 100px 0; }
+	padding: 70px 0 80px;
 	.content-box {
 		.icon {
 			margin-bottom: 15px;
@@ -168,32 +212,225 @@ textarea:-ms-input-placeholder {
 			border-radius: 0;
 			box-shadow: none;
 		}
-		.title {
-
-		}
 	}
 }
 
-//---------------------------------------------//
-//--------- CONSULTATION FORM SECTION ---------//
-//---------------------------------------------//
-.consult-form {
-	
-}
+/* ---- Consultation Form
+/* ------------------------------- */
+.consult-form { padding: 70px 0 90px; }
 
-//--------------------------------------//
-//--------- AFFILIATES SECTION ---------//
-//--------------------------------------//
+/* ---- Affiliates
+/* ------------------------------- */
 .affiliates {
-	&.block { padding: 95px 0 100px; }
+	padding: 80px 0 100px;
 	.section-header {
 		.section-title { margin-bottom: 80px; }
 	}
 }
 
-//------------------------------------------//
-//--------- FOOTER WIDGETS SECTION ---------//
-//------------------------------------------//
+/* ---- About
+/* ------------------------------- */
+.about {
+	background-image: url(../html/sections/images/tile-bg-texture.jpg);
+	background-position: center;
+	background-size: cover;
+	padding: 50px 0 80px;
+	.section-title {
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 35px;
+	}
+	.content-box {
+		padding: 25px 35px;
+		background-color: fadeout(@btn-success-border, 60%);
+		.box-shadow(1px 1px 8px fadeout(#000, 80%));
+		.title {
+			font-weight: 600;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+		hr {
+			background: linear-gradient(90deg, fadeout(#000, 80%) 60%, transparent);
+			border: none;
+			height: 1px;
+			margin-top: 10px;
+		}
+	}
+}
+
+/* ---- Team
+/* ------------------------------- */
+.team {
+	padding: 60px 0 80px;
+	.section-header .section-title { margin-bottom: 60px; }
+	.img-team {
+		border: 10px solid @brand-primary;
+		padding: 3px;
+	}
+}
+@media (max-width: @screen-sm-max) {
+	.team {
+		.img-team { margin-bottom: 20px; }
+	}
+}
+
+/* ---- Service Detail
+/* ------------------------------- */
+.service-detail {
+	padding: 80px 0 50px;
+	.tile-images {
+		padding: 8px;
+		border: 8px solid @brand-primary-soft;
+		margin-bottom: 30px;
+		img {
+			float: left;
+			width: 100%;
+			&.top-left {
+				margin-right: 1.6%;
+				width: 49.2%;
+			}
+			&.top-right { width: 49.2%; }
+			&.bottom { margin-top: 1.6%; }
+			&.bottom2 { margin-top: 8px; }
+		}
+	}
+	.title {
+		font-weight: bold;
+		font-size: 1.3em;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		&.laminate { margin-top: 30px; }
+	}
+	hr {
+		background: linear-gradient(90deg, @brand-primary-soft 60%, transparent);
+		border: none;
+		height: 1px;
+		margin-top: 10px;
+	}
+}
+
+/* ---- Consultation CTA
+/* ------------------------------- */
+.cta { padding: 90px 0; }
+
+/* ---- Tetimonials
+/* ------------------------------- */
+.testimonials { padding-top: 70px; }
+.col-testimonial { padding-bottom: 90px; }
+.testimonial {
+	background-color: #fff;
+	border: 6px solid @brand-primary;
+	font-size: 16px;
+	font-style: italic;
+	line-height: 23px;
+	margin: 0 0 20px;
+	padding: 25px 35px 27px;
+	position: relative;
+	i {
+		color: @brand-primary-light;
+		font-size: 30px;
+		line-height: 16px;
+		&.fa-quote-left { margin-right: 10px; }
+		&.fa-quote-right {
+			margin-left: 10px;
+			vertical-align: bottom;
+		}
+	}
+	span.arrow {
+		bottom: -20px;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-top: 15px solid @brand-primary;
+		left: 20px;
+		position: absolute;
+	}
+}
+.client-profile {
+	float: left;
+	min-height: 64px;
+	padding-left: 90px;
+	position: relative;
+	width: 100%;
+	.thumb {
+		height: 64px;
+		left: 10px;
+		position: absolute;
+		top: 0px;
+		width: 64px;
+		.box-shadow(1px 1px 2px fadeout(#000, 80%));
+	}
+	i.thumb {
+		color: #fff;
+		background-color: @brand-primary;
+		border-radius: 50%;
+		font-size: 30px;
+		line-height: 64px;
+		text-align: center;
+	}
+	.name {
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		margin-top: 20px;
+		text-transform: uppercase;
+	}
+}
+
+/* ---- Masonry Gallery
+/* ------------------------------- */
+.masonry-gallery {
+	padding: 40px 0 80px;
+	.section-header .section-title { margin-bottom: 60px; }
+	.filters {
+		margin-bottom: 30px;
+		.text-center();
+		a {
+			border: 1px solid transparent;
+			color: @gray-dark;
+			letter-spacing: 3px;
+			padding: 12px 25px;
+			margin:	0 7px;
+			text-transform: uppercase;
+			.transition(border-color .25s ease-in-out);
+			&:hover { border-color: @gray-dark; }
+		}
+	}
+	.col-masonry {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.img-masonry {
+		width: 100%;
+		margin-bottom: 16px;
+	}
+}
+
+/* ---- Tetimonial Form
+/* ------------------------------- */
+.testimonial-form {
+	padding-top: 50px;
+	.fileUpload {
+		margin: 2px 0;
+		overflow: hidden;
+		padding: 11px 16px;
+		position: relative;
+	}
+	.fileUpload input.upload {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+}
+
+/* ---- Footer
+/* ------------------------------- */
 .footer-widgets {
 	padding: 80px 0 100px;
 	&.bg-primary { background-color: darken(@brand-primary, 4%) }
@@ -211,17 +448,10 @@ textarea:-ms-input-placeholder {
 	}
 	.social-icons i {
 		margin-right: 7px;
-		//Transitions
-			transition: all 0.2s ease-in-out;
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
+		border-radius: 0;
+		.transition(box-shadow .2s ease-in-out);
 	}
 }
-
-//--------------------------------------//
-//---------- COPYRIGHT FOOTER ----------//
-//--------------------------------------//
 .copyright-footer {
 	&.bg-primary-dark { background-color: lighten(@brand-primary-dark, 5%); }
 	.copyright,
