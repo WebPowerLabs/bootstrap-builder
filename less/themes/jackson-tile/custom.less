@@ -290,6 +290,10 @@ textarea:-ms-input-placeholder {
 			margin-top: 10px;
 		}
 	}
+	.img-team {
+		border: 10px solid @brand-primary;
+		padding: 3px;
+	}
 }
 @media (max-width: @screen-sm-max) {
 	.about {
@@ -298,26 +302,11 @@ textarea:-ms-input-placeholder {
 	}
 }
 
-/* ---- Team
-/* ------------------------------- */
-.team {
-	padding: 60px 0 80px;
-	.section-header .section-title { margin-bottom: 60px; }
-	.img-team {
-		border: 10px solid @brand-primary;
-		padding: 3px;
-	}
-}
-@media (max-width: @screen-sm-max) {
-	.team {
-		.img-team { margin-bottom: 20px; }
-	}
-}
-
 /* ---- Service Detail
 /* ------------------------------- */
 .service-detail {
 	padding: 80px 0 50px;
+	p, ul > li { font-size: 16px; }
 	.tile-images {
 		padding: 8px;
 		border: 8px solid @brand-primary-soft;
@@ -501,6 +490,15 @@ textarea:-ms-input-placeholder {
 @media (max-width: @screen-sm-max) {
 	.masonry-gallery {
 		.gallery-nav { padding: 0 110px; }
+	}
+}
+@media (max-width: @screen-xs-max) {
+	.masonry-gallery {
+		.col-masonry {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		.img-masonry { margin-bottom: 5px; }
 	}
 }
 
