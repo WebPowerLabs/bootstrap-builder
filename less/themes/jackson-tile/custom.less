@@ -185,12 +185,12 @@ textarea:-ms-input-placeholder {
 /* ------------------------------- */
 .welcome {
 	padding: 0;
-	background-image: url(http://www.stupic.com/images/modern-elegant-residence-hall-lobby-with-colorful-wall-tile-on-wood-design.jpg);
+	background-image: url(../images/2/elegant-tile-foyer.jpg);
 	background-position: center;
 	background-size: cover;
 	.dark-overlay {
 		padding: 185px 0 200px;
-		background-color: rgba(0,0,0,0.3);
+		background-color: rgba(0,0,0,0.4);
 	}
 	.section-title {
 		margin-bottom: 10px;
@@ -290,6 +290,7 @@ textarea:-ms-input-placeholder {
 			margin-top: 10px;
 		}
 	}
+	.headshot-wrapper { padding-right: 5px; }
 	.img-team {
 		border: 10px solid @brand-primary;
 		padding: 3px;
@@ -298,7 +299,9 @@ textarea:-ms-input-placeholder {
 @media (max-width: @screen-sm-max) {
 	.about {
 		padding-bottom: 60px;
-		.content-box { margin-bottom: 20px; }
+		.content-box,
+		.img-team { margin-bottom: 20px; }
+		.headshot-wrapper { padding-right: 15px; }
 	}
 }
 
