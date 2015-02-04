@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Font Awesome Icons
+    ================================================== -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets
+    ================================================== -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    
+  </head>
+  <body>
+<nav id="navbar" class="navbar navbar-static-top" style="margin-bottom:0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">BOOTSTRAP BUILDER</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  <!-- FEATURES SHOWCASE SECTION
+  ================================================== -->
+    <section class="features-showcase block bg-primary-lighter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5">
+            <img class="img-responsive" src="../sections/images/iphone-5s-white.png"/>
+          </div><!--/ .col-sm-5-->
+          <div class="col-sm-7">
+            <div class="feature">
+              <div class="col-sm-2 column">
+                <i class="fa fa-linux fa-spin fa-2x"></i>
+              </div><!--/ .col-sm-2-->
+              <div class="col-sm-10 column">
+                <h3>Business Template</h3>
+                <hr><!-- separator-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a nibh et lorem elementum dictum sit amet volutpat lacus. Sed quam dolor, tristique a aliquet in, volutpat id orci. Morbi vitae ligula vulputate, sollicitudin diam placerat, fringilla sapien. Suspendisse in hendrerit ante, non vestibulum nibh.</p>
+              </div><!--/ .col-sm-10-->
+            </div><!--/ .feature-->
+            <div class="feature">
+              <div class="col-sm-2 column">
+                <i class="fa fa-camera"></i>
+              </div><!--/ .col-sm-2-->
+              <div class="col-sm-10 column">
+                <h3>Easy to Edit</h3>
+                <hr><!-- separator-->
+                <p>Curabitur varius sed odio a condimentum. Mauris sed tellus pulvinar nibh consectetur dictum ut a odio. Integer et venenatis dolor, ac ultricies nunc. Donec urna sapien, rhoncus vel orci malesuada, scelerisque commodo tellus.</p>
+              </div><!--/ .col-sm-10-->
+            </div><!--/ .feature-->
+            <div class="feature">
+              <div class="col-sm-2 column">
+                <i class="fa fa-cog"></i>
+              </div><!--/ .col-sm-2-->
+              <div class="col-sm-10 column">
+                <h3>Responsive Layout</h3>
+                <hr><!-- separator-->
+                <p>Vivamus ipsum lorem, accumsan interdum nisl ac, aliquam tristique nibh. Nullam ultricies auctor enim ac tristique. Mauris in ullamcorper mauris. Praesent dolor lorem, euismod ornare nibh eu, faucibus commodo libero. Proin at mauris velit. Vivamus nec elit sit amet erat dapibus scelerisque eu ut nisl.</p>
+              </div><!--/ .col-sm-10-->
+            </div><!--/ .feature-->
+            <div class="feature">
+              <div class="col-sm-2 column">
+                <i class="fa fa-arrows"></i>
+              </div><!--/ .col-sm-2-->
+              <div class="col-sm-10 column">
+                <h3>Bootstrap Framework</h3>
+                <hr><!-- separator-->
+                <p>In commodo dignissim facilisis. Vivamus ullamcorper rhoncus ligula, at eleifend sapien mattis quis. Aenean vitae ultrices erat. Nullam mollis quis tortor vel facilisis. Quisque sit amet mauris eu urna imperdiet pellentesque. Nullam quis molestie nisl.</p>
+              </div><!--/ .col-sm-10-->
+            </div><!--/ .feature-->
+          </div><!--/ .col-sm-7-->
+        </div><!--/ .row-->
+      </div><!--/ .container-->
+    </section>
+
+  <!-- END FEATURES SHOWCASE SECTION
+  ================================================== -->
+
+
+
+  <!-- SECTION
+  ================================================== -->
+    <section class="section-">
+      <div class="container">
+        
+      </div><!--/ .container-->
+    </section>
+  <!-- END SECTION
+  ================================================== -->
+
+
+
+  <!-- Latest JQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+  <script>
+
+(function() {
+// author: Will Farley
+// github: @goldhand
+  
+
+// Create cross browser requestAnimationFrame method:
+window.requestAnimationFrame = window.requestAnimationFrame
+ || window.mozRequestAnimationFrame
+ || window.webkitRequestAnimationFrame
+ || window.msRequestAnimationFrame
+ || function(f){setTimeout(f, 1000/60)}
+
+// set marker on page scorll
+function setScrollMarker(min, max) {
+  max = max || 0;
+  if(max) {
+    return window.pageYOffset>=min&&window.pageYOffset<=max;
+  };
+  return window.pageYOffset>=min;
+};
+
+// simulate iPhone scroll or "pull" down to refresh action
+var refreshMarker = {
+  check: function() {
+    if(!this.timeoutID && window.pageYOffset<this.yAxis) {
+      this.refresh();
+    };
+    if(this.timeoutID && window.pageYOffset>=0) {
+      this.cancel();
+    };
+  },
+  setup: function(yAxis) {
+    this.yAxis = yAxis || -20;
+  },
+  alert: function(message) {
+    alert(message);
+    delete this.timeoutID;
+  },
+  refresh: function() {
+      var self = this;
+      this.timeoutID = window.setTimeout(function(msg) {self.alert(msg);}, [1000], "REFRESH!!!!");
+  },
+  cancel: function() {
+    window.clearTimeout(this.timeoutID);
+    delete this.timeoutID;
+  }
+};
+
+refreshMarker.setup();
+
+// return the direction the user is scrolling
+var scrollDirection = {
+  check : function() {
+    this.up = this.record > window.pageYOffset;
+    this.down = this.record < window.pageYOffset;
+    this.direction = this.record > window.pageYOffset ? 'up' : 'down';
+    this.record = window.pageYOffset; // set record after comparing
+  },
+  setup: function() {
+    this.record = window.pageYOffset;
+  }
+};
+
+scrollDirection.setup();
+
+// fix a bootstrap navbar to the top of page right after a user scrolls past the nav
+var fixedNavbar = {
+  getElem: function(navId) {
+    navId = navId || 'navbar';
+    return document.getElementById(navId);
+  },
+  fix: function(direction) {
+    // choices: 'top' 'bottom'
+    direction = direction || 'top';
+    if(this.position()=='static') {
+      this.elem.classList.remove('navbar-static-top');
+      this.elem.classList.add('navbar-fixed-'+direction);
+      this.spacer.style.marginTop=Number(this.spacer.style.marginTop.split('px')[0])+this.elem.offsetHeight+'px';
+      // add margin to existing margin-top to compensate for nav height
+    };
+  },
+  unFix: function() {
+    if(this.position()!='static') {
+      this.elem.classList.add('navbar-static-top');
+      this.elem.classList.remove('navbar-fixed-'+this.position());
+      this.spacer.style.marginTop=Number(this.spacer.style.marginTop.split('px')[0])-this.elem.offsetHeight+'px';
+      // subtract margin from existing margin
+    };
+  },
+  position: function() {
+    if(this.elem.classList.contains('navbar-fixed-top')) {
+      return 'top';
+    };
+    if(this.elem.classList.contains('navbar-fixed-bottom')) {
+      return 'bottom';
+    };
+    return 'static';
+  },
+  check: function() {
+    this.active = setScrollMarker(this.activatePoint);
+    if(this.active && this.position() == 'static') {
+      // active but its not visible to user yet
+      this.fix();
+
+    };
+    if(!!!this.active && this.position() != 'static') {
+      this.unFix();
+    };
+  },
+  activate: function() {
+
+  },
+  setup: function(navId) {
+    this.elem = this.getElem(navId);
+    this.spacer = document.getElementsByTagName('body')[0];
+    this.activatePoint = this.elem.offsetTop;
+    this.active = setScrollMarker(this.activatePoint);
+
+  }
+}
+
+fixedNavbar.setup();
+
+
+var scrollSlideShow = {
+  setup: function(elemId) {
+    this.elem = getElem(elemId);
+    this.elem.style.height=window.innerHeight+"px";
+    this.offsetTop = this.elem.offsetTop;
+  },
+  check: function() {
+    if(setMarker())
+  },
+  getElem: function(elemId) {
+    elemId = elemId || 'scroll-slide-show';
+    return document.getElementById(elemId);
+  }
+}
+
+
+
+
+// run all the functions in this loop
+function scrollLoop() {
+  refreshMarker.check();
+  scrollDirection.check();
+  fixedNavbar.check();
+};
+
+window.addEventListener('scroll', function() {
+  requestAnimationFrame(scrollLoop);
+}, false);
+
+})();
+
+        </script>
+
+
+  <!-- bower install holderjs -->
+  <script src="../../bower_components/holderjs/holder.js"></script>
+  <!-- bower install loremjs -->
+  <!-- <p data-lorem="[1p, 1s, 1w]"></p> -->
+  <script src="../../bower_components/loremjs/lorem.js"></script>
+  </body>
+</html>
+ 
