@@ -40,3 +40,6 @@ media/
 
 # bower
 bower_components/
+
+# compiled css
+css/*

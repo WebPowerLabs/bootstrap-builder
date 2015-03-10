@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Font Awesome Icons
+    ================================================== -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets
+    ================================================== -->
+    <link rel="stylesheet/less" href="../../less/themes/bootstrapify/router.less">
+    <script type="text/javascript">
+      less = {
+        env: "development", // or "production"
+        async: false,       // load imports async
+        fileAsync: false,   // load imports async when in a page under
+        // a file protocol
+        poll: 1000,         // when in watch mode, time in ms between polls
+        functions: {},      // user functions, keyed by name
+        dumpLineNumbers: "comments", // or "mediaquery" or "all"
+        relativeUrls: false,// whether to adjust url's to be relative
+        // if false, url's are already relative to the
+        // entry less file
+        rootpath: ""// a path to add on to the start of every url
+        //resource
+      };
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>
+    
+  </head>
+  <body>
+
+
+
+<style>
+.bootstrapify {
+  padding-top: 20px;
+}
+.bootstrapify a {
+  cursor: pointer;
+}
+.bootstrapify .table tr:after {
+  content: " ";
+  height: 60px;
+  border-left: 3px solid #000;
+  z-index: -1;
+  position: absolute;
+  margin-left: -20px;
+}
+.bootstrapify .table.visible-xs tr:first-of-type::after {
+  border-left: none;
+  height: 100px;
+}
+.bootstrapify td.btn {
+  display: table-cell;
+  width: inherit;
+  border-radius: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+</style>
+
+<div class="bootstrapify">
+  <div ng-controller="MainCtrl">
+    <div class="container-fluid">
+      <div class="loading text-center" ng-show='!vendorColors.length'>
+        <span>Loading data...</span><br><br>
+        <i class="fa fa-spinner fa-spin fa-3x"></i>
+      </div>
+      <section class="section-vendor-colors row" ng-show="vendorColors.length">
+        <div class="row" style="padding-bottom:20px;">
+          <div class="col-md-3 col-sm-4" ng-repeat="color in vendorColors | unique: 'manufacturer_name'" ng-if="color.manufacturer_name">
+            <a ng-click="searchText(color.manufacturer_name)">{{color.manufacturer_name}}</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <form ng-submit="searchFilter = search">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn"><button class="btn" ng-click="searchFilter = search"><i class="fa fa-search"></i></button></span>
+                  <input id="id_search_all" type="text" class="form-control" ng-model="search" placeholder="Search Manufacturer Color or Number"/>
+                   <span ng-if="search || searchFilter" class="input-group-btn"><button ng-click="clearSearch();" type="button" class="btn btn-default"><i class="fa fa-remove"></i></button></span>
+                 </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-6"><p class="">Showing {{(vendorColors | multiKeywordFilter:searchFilter).length}} out of {{ vendorColors.length }} colors </p></div>
+        </div>
+            <div class="">
+              <table class="table table-condensed hidden-xs">
+                <thead>
+                  <tr>
+                    <th>Manufacturer</th>
+                    <th>Color</th>
+                    <th>#</th>
+                    <th>SeamPro Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="color in vendorColors | orderBy:['manufacturer_name', 'manufacturer_color'] | multiKeywordFilter:searchFilter" ng-if="color.manufacturer_name">
+                    <td>{{color.manufacturer_name}}</td>
+                    <td>{{color.manufacturer_color}}</td>
+                    <td>{{color.manufacturer_number}}</td>
+                    <td ng-if="color.volusion_id&&color.volusion_id!=0" class="btn btn-default" style="background-color:rgba({{color.red}}, {{color.green}}, {{color.blue}}, {{color.transparency/100}});">
+                      <a style="color:{{color.text_color|textColorFilter}};width:100%;display:inline-block;text-decoration:underline;" href="{{linkUrl}}?color={{color.volusion_id}}">{{color.glueboss_color}} {{color.glueboss_number}}</a>
+                    </td>
+                    <td ng-if="color.volusion_id==0" class="text-center">
+                      {{color.glueboss_color}} {{color.glueboss_number}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-condensed table-bordered visible-xs">
+                <thead>
+                  <tr>
+                    <th>Manufacturer, Color Name</th>
+                    <th>SeamPro Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="color in vendorColors | orderBy:['manufacturer_name', 'manufacturer_color'] | multiKeywordFilter:searchFilter" ng-if="color.manufacturer_name">
+                    <td>{{color.manufacturer_name}} - {{color.manufacturer_color}} {{color.manufacturer_number}}</td>
+                    <td ng-if="color.volusion_id&&color.volusion_id!=0" class="btn btn-default" style="background-color:rgba({{color.red}}, {{color.green}}, {{color.blue}}, {{color.transparency/100}});">
+                      <a style="color:{{color.text_color|textColorFilter}};width:100%;display:inline-block;text-decoration:underline;" href="{{linkUrl}}?color={{color.volusion_id}}">{{color.glueboss_color}} {{color.glueboss_number}}</a>
+                    </td>
+                    <td ng-if="color.volusion_id==0" class="text-center">{{color.glueboss_color}} {{color.glueboss_number}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- ANGULAR SCRIPTS -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
+<script>
+'use strict';
+/**
+ * @ngdoc overview
+ * @name gluebossApp
+ * @description
+ * # gluebossApp
+ *
+ * Main module of the application.
+ */
+angular
+  .module('gluebossApp',['ui.unique',]);
+
+/**
+ * @ngdoc filter
+ * @name gluebossApp.filter:multiKeywordFilter
+ * @function
+ * @description
+ * # multiKeywordFilter
+ * Filter in the gluebossApp.
+ */
+angular.module('gluebossApp')
+  .filter('multiKeywordFilter', function ($filter) {
+    return function (data, text) {
+      var returnData = [];
+      if(text) {
+        var textArr = text.split(' ');
+        angular.forEach(textArr, function(test){
+          if(test){
+            data = $filter('filter')(data, test);
+          };
+        });
+      };
+      return data;
+    };
+  });
+/**
+ * @ngdoc filter
+ * @name gluebossApp.filter:textColorFilter
+ * @function
+ * @description
+ * # textColorFilter
+ * Filter in the gluebossApp.
+ */
+angular.module('gluebossApp')
+  .filter('textColorFilter', function ($filter) {
+    return function (data) {
+      if(data=='0') {
+        return '#000';
+      };
+      if(data=='1') {
+        return '#fff';
+      };
+    };
+  });
+
+
+/**
+/**
+ * @ngdoc function
+ * @name gluebossApp.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the gluebossApp
+ */
+angular.module('gluebossApp')
+  .controller('MainCtrl', function ($scope, $http) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+
+    $http.get('https://s3-us-west-1.amazonaws.com/glueboss/glueboss-data.json').success(function(data) {
+      $scope.vendorColors = data;
+    });
+    $scope.searchText = function(txt) {
+      $scope.searchFilter=txt;
+      $scope.search=txt;
+    };
+    $scope.clearSearch = function() {
+      $scope.searchFilter=null;
+      $scope.search=null;
+    };
+    $scope.linkUrl = '//www.glueboss.com/product-p/sp4-4000.htm';
+
+  });
+
+/** bootstrap **/
+angular.bootstrap(document, ['gluebossApp']);
+
+</script>
+
+
+
+
+
+  <!-- bower install holderjs -->
+  <script src="../../bower_components/holderjs/holder.js"></script>
+  <!-- bower install loremjs -->
+  <!-- <p data-lorem="[1p, 1s, 1w]"></p> -->
+  <script src="../../bower_components/loremjs/lorem.js"></script>
+  </body>
+</html>
+ 

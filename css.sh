@@ -19,3 +19,12 @@ echo "done"
 echo -n "lessc mrbeer.css..."
 lessc -x ./less/themes/mrbeer/router.less > ./css/mrbeer.min.css
 echo "done"
+echo -n "lessc bootstrapify.css..."
+lessc -x ./less/themes/bootstrapify/router.less > ./css/bootstrapify.min.css
+echo "done"
+echo -n "lessc ccx.css..."
+lessc -x ./less/themes/ccx/router.less > ./css/ccx.min.css
+echo "done"
+echo -n "lessc avaz.css..."
+lessc -x ./less/themes/avaz/router.less > ./css/avaz.min.css
+echo "done"
