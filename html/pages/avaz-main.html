@@ -36,31 +36,190 @@
     
   </head>
   <body>
-<nav id="navbar" class="navbar navbar-static-top" style="margin-bottom:0;">
+
+<nav id="navbar" class="navbar navbar-fixed-top navbar-gradient" style="margin-bottom:0;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">BOOTSTRAP BUILDER</a>
+      <a class="navbar-brand">AVAZ</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </div>
 </nav>
 
+  <!-- WORD SLIDER CTA SECTION
+  ================================================== -->
+    <section class="section-word-slider-cta inverse-bg" id="section-word-slider">
+
+      <div class="center-container">
+        <div class="word-slider-container">
+          <h1 class="word-slider-header">You have a brand.</h1>
+          <h1 class="word-slider-header">That brand has a story.</h1>
+          <h1 class="word-slider-header">
+            <span class="word-carousel-title">We tell your story through</span>
+            <span id="word-carousel" class="carousel word-carousel slide" data-ride="carousel" data-interval="2000">
+              <!-- Wrapper for slides -->
+              <span class="carousel-inner">
+                <span class="item active">Web Design</span>
+                <span class="item">Branding</span>
+                <span class="item">App Design</span>
+                <span class="item">Development</span>
+                <span class="item">Consulting</span>
+              </span>
+            </span>
+          </h1>
+          <button class="btn next-btn form-cta-btn" data-target="#section-progress-form">Tell Your Story</button>
+        <div class="next-section">
+          <button class="btn next-btn next-section-btn" data-target="#section-slider-fullwidth">Past Stories <br><i class="next-icon fa fa-angle-down fa-fw fa-2x"></i></button>
+        </div>
+        </div>
+      </div>
+
+    </section>
+  <!-- END WORD SLIDER CTA  SECTION
+  ================================================== -->
+
+  <!-- FULL-WIDTH SLIDER SECTION
+  ================================================== -->
+    <section class="section-slider-fullwidth" id="section-slider-fullwidth">
+      <div id="full-width-slider" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <!--
+        <ol class="carousel-indicators">
+          <li data-target="#full-width-slider" data-slide-to="0" class="active"></li>
+          <li data-target="#full-width-slider" data-slide-to="1"></li>
+          <li data-target="#full-width-slider" data-slide-to="2"></li>
+        </ol><!--/ .carousel-indicators-->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="http://constructors.mustachethemes.com/img/slider/img-slider-top-1.jpg" alt="">
+            <div class="carousel-caption">
+              <h1></h1>
+              <p></p>
+            </div><!--/ .carousel-caption-->
+          </div><!--/ .item-->
+          <div class="item">
+            <img src="http://constructors.mustachethemes.com/img/slider/img-slider-top-2.jpg" alt="">
+            <div class="carousel-caption">
+              <h1></h1>
+              <p></p>
+            </div><!--/ .carousel-caption-->
+          </div><!--/ .item-->
+          <div class="item">
+            <img src="http://constructors.mustachethemes.com/img/slider/img-slider-top-3.jpg" alt="">
+            <div class="carousel-caption">
+              <h1></h1>
+              <p></p>
+            </div><!--/ .carousel-caption-->
+          </div><!--/ .item-->
+        </div><!--/ .carousel-inner-->
+        <!-- Controls -->
+        <a class="left carousel-control" href="#full-width-slider" data-slide="prev">
+          <span class="icon-prev fa fa-fw fa-angle-left"></span>
+        </a>
+        <a class="right carousel-control" href="#full-width-slider" data-slide="next">
+          <span class="icon-next fa fa-fw fa-angle-right"></span>
+        </a>
+      </div><!--/ .carousel-->
+    </section>
+
+  <!-- END FULL-WIDTH SLIDER SECTION
+  ================================================== -->
+
 
   <!-- SECTION
   ================================================== -->
-    <section class="section-">
+    <section class="section-progress-form" id="section-progress-form">
+      <h1 class="text-center">Let's Start Writing Your Story</h1>
       <div class="container">
-        
+        <form class="progress-form" id="progress-form">
+          <div class="form-group">
+            <p class="form-control-static">Hi, my name is <input type="text" class="form-control" name="contact_name" id="id_contact_name">
+            and I work with a company/brand called <input type="text" class="form-control" name="contact_brand" id="id_contact_brand">.</p>
+            <br>
+            <p class="form-control-static">This is an exciting time for us because within the next</p>
+            <span class="btn-group">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="contact_month" id="id_contact_month">1 month <i class="fa fa-angle-down"></i></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">1 month</a></li><li><a href="#">2 months</a></li>
+              </ul>
+            </span>
+            <p class="form-control-static">we are planning on:</p>
+            <br><br>
+            <textarea class="form-control textarea-lined" name="contact_plans" id="id_contact_plans" rows="2" cols="100"></textarea>
+          </div>
+        <p class="form-control-static">We can achieve this together by utilizing your expertise in:</p>
+          <div class="form-group text-center">            
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_consulting" type="checkbox" value=""> Consulting
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_branding" type="checkbox" value=""> Branding
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_development" type="checkbox" value=""> Development
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_web_design" type="checkbox" value=""> Web Design
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_app_design" type="checkbox" value=""> App Design
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="form-control-static">Lets connect! You can reach me by email at 
+              <input type="text" class="form-control" name="contact_email" id="id_contact_email">
+              or phone at
+              <input type="text" class="form-control" name="contact_phone" id="id_contact_phone">
+            </p>
+          </div>
+          <div class="form-group"><button type="submit" class="btn btn-default" name="contact_submit" id="id_contact_submit">Send Message</button></div>
+        </form>
       </div><!--/ .container-->
     </section>
   <!-- END SECTION
   ================================================== -->
 
+  <!-- AFFILIATES SECTION
+  ================================================== -->
+    <section class="affiliates block bg-primary-lighter">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="https://www.google.com/images/srpr/logo11w.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="http://upload.wikimedia.org/wikipedia/commons/5/51/Logo_twitter_wordmark_1000.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="http://tctechcrunch2011.files.wordpress.com/2011/11/techcrunch_transparent.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="http://cdn2.hubspot.net/hub/120299/file-308776502-png/tesla-motors-logo.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="http://newspace2011.spacefrontier.org/media/images/company_logos/SpaceX_Logo.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="#"><img src="http://img3.wikia.nocookie.net/__cb20121110085059/logopedia/images/6/61/PayPal_logo_new.png" class="img-responsive"></a>
+          </div><!--/ .col-md-2-->
+        </div><!--/ .row-->
+      </div><!--/ .container-->
+    </section>
+  <!-- END AFFILIATES SECTION
+  ================================================== -->
 
 
   <!-- Latest JQuery -->
@@ -72,6 +231,92 @@
   <!-- bower install loremjs -->
   <!-- <p data-lorem="[1p, 1s, 1w]"></p> -->
   <script src="../../bower_components/loremjs/lorem.js"></script>
+
+  <!-- CUSTOM JAVASCRIPT
+  ================================================== -->
+
+
+  <script>
+  
+  function setSectionHeight(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.style.height = window.innerHeight+'px';
+    section.style.overflowY='hidden';
+  };
+
+  function setSectionHeights() {
+    setSectionHeight('section-word-slider');
+    //setSectionHeight('section-slider-fullwidth');
+    setSectionHeight('section-progress-form');
+  };
+
+  function scrollTo(elem) {
+    $('html, body').animate({
+        scrollTop: $(elem).offset().top
+    }, 2000);
+  };
+
+  $(document).ready(function() {
+    $('.next-btn').on('click', function(e) {
+      e.preventDefault();
+      scrollTo(this.dataset.target);
+    });
+
+    // WORD-SLIDER
+    setSectionHeights();
+
+    $(window).resize(function() {
+      setSectionHeights();
+    });
+
+
+    // CONTACT FORM
+
+    var limit = 2; // <---max no of lines you want in textarea
+    var textarea = document.getElementById("id_contact_plans");
+    var spaces = textarea.getAttribute("cols");
+
+    textarea.onkeyup = function() {
+       var lines = textarea.value.split("\n");
+        
+       for (var i = 0; i < lines.length; i++) 
+       {
+             if (lines[i].length <= spaces) continue;
+             var j = 0;
+             
+            var space = spaces;
+            
+            while (j++ <= spaces) 
+            {
+               if (lines[i].charAt(j) === " ") space = j;  
+            }
+        lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
+        lines[i] = lines[i].substring(0, space);
+      }
+        if(lines.length>limit)
+        {
+            textarea.style.color = 'red';
+            setTimeout(function(){
+                textarea.style.color = '';
+            },500);
+        }    
+       textarea.value = lines.slice(0, limit).join("\n");
+    };
+
+
+    $("#progress-form input").keyup(function() {
+    });
+
+
+  });
+
+  
+  </script>
+
+  <!-- END CUSTOM JAVASCRIPT
+  ================================================== -->  
+
+
   </body>
 </html>
  

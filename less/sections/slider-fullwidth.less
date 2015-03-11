@@ -11,8 +11,9 @@
 //------ FULL-WIDTH SLIDER SECTION ------//
 //---------------------------------------//
 
-section.slider-fullwidth {
+.section-slider-fullwidth, section.slider-fullwidth {
 	.carousel-inner {
+		height: 100%;
 		img {
 			width: 100%;
 		}
@@ -28,21 +29,21 @@ section.slider-fullwidth {
 }
 
 @media (max-width: @screen-md-max) {
-	section.slider-fullwidth {
+	.section-slider-fullwidth, section.slider-fullwidth {
 		.carousel-caption {
 			padding-bottom: 300px;
 		}
 	}
 }
 @media (max-width: @screen-sm-max) {
-	section.slider-fullwidth {
+	.section-slider-fullwidth, section.slider-fullwidth {
 		.carousel-caption {
 			padding-bottom: 200px;
 		}
 	}
 }
 @media (max-width: @screen-xs-max) {
-	section.slider-fullwidth {
+	.section-slider-fullwidth, section.slider-fullwidth {
 		.carousel-caption {
 			padding-bottom: 30px;
 		}

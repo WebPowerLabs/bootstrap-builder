@@ -38,24 +38,37 @@
 
   </head>
   <body>
+  <!-- WORD SLIDER CTA SECTION
+  ================================================== -->
+    <section class="section-word-slider-cta inverse-bg" id="section-word-slider">
 
-	<!-- SECTION
-	================================================== -->
-    <section class="section-word-slider-cta">
-      <div class="container">
-        <h1 class="word-slider-header">
-        </h1>
-        <h1 class="word-slider-header">
-        </h1>
-        <h1 class="word-slider-header">
-          <span class="highlight" id="word-slider"></span>
-        </h1>
-        <button class="form-cta-btn"></button>
-        <button class="next-section-btn"></button>
-      </div><!--/ .container-->
+      <div class="center-container">
+        <div class="word-slider-container">
+          <h1 class="word-slider-header">You have a brand.</h1>
+          <h1 class="word-slider-header">That brand has a story.</h1>
+          <h1 class="word-slider-header">
+            <span class="word-carousel-title">We tell your story through</span>
+            <span id="word-carousel" class="carousel word-carousel slide" data-ride="carousel" data-interval="2000">
+              <!-- Wrapper for slides -->
+              <span class="carousel-inner">
+                <span class="item active">Web Design</span>
+                <span class="item">Branding</span>
+                <span class="item">App Design</span>
+                <span class="item">Development</span>
+                <span class="item">Consulting</span>
+              </span>
+            </span>
+          </h1>
+          <button class="btn next-btn form-cta-btn" data-target="#elemToScollTo">Tell Your Story</button>
+        <div class="next-section">
+          <button class="btn next-btn next-section-btn" data-target="#elemToScollTo">Past Stories <br><i class="fa fa-angle-down fa-fw fa-2x"></i></button>
+        </div>
+        </div>
+      </div>
+
     </section>
-	<!-- END SECTION
-	================================================== -->
+  <!-- END WORD SLIDER CTA  SECTION
+  ================================================== -->
 
   <!-- Latest JQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -66,6 +79,41 @@
   <!-- bower install loremjs -->
   <!-- <p data-lorem="[1p, 1s, 1w]"></p> -->
   <script src="../../bower_components/loremjs/lorem.js"></script>
+  
+
+<script>
+  function setSectionHeight(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.style.height = window.innerHeight+'px';
+    section.style.overflowY='hidden';
+  };
+  function setSectionHeights() {
+    setSectionHeight('section-word-slider');
+  };
+  function scrollTo(elem) {
+    $('html, body').animate({
+        scrollTop: $(elem).offset().top
+    }, 1000);
+  };
+
+
+  $(document).ready(function() {
+
+
+    // WORD-SLIDER
+    setSectionHeights();
+
+    $(window).resize(function() {
+      setSectionHeights();
+    });
+    $('.next-btn').on('click', function(e) {
+      e.preventDefault();
+      scrollTo(this.dataset.target);
+    });
+  });
+
+</script>
+
   </body>
 </html>
  

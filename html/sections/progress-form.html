@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Font Awesome Icons
+    ================================================== -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets
+    ================================================== -->
+
+    <link rel="stylesheet/less" href="../../less/themes/template/router.less">
+    <script type="text/javascript">
+      less = {
+        env: "development", // or "production"
+        async: false,       // load imports async
+        fileAsync: false,   // load imports async when in a page under
+        // a file protocol
+        poll: 1000,         // when in watch mode, time in ms between polls
+        functions: {},      // user functions, keyed by name
+        dumpLineNumbers: "comments", // or "mediaquery" or "all"
+        relativeUrls: false,// whether to adjust url's to be relative
+        // if false, url's are already relative to the
+        // entry less file
+        rootpath: ""// a path to add on to the start of every url
+        //resource
+      };
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>
+
+
+  </head>
+  <body>
+
+	<!-- SECTION
+	================================================== -->
+    <section class="section-progress-form">
+      <div class="container">
+        <form class="progress-form" id="progress-form">
+          <div class="form-group">
+            <p class="form-control-static">Hi, my name is <input type="text" class="form-control" name="contact_name" id="id_contact_name">
+            and I work with a company/brand called <input type="text" class="form-control" name="contact_brand" id="id_contact_brand">.</p>
+            <br>
+            <p class="form-control-static">This is an exciting time for us because within the next</p>
+            <span class="btn-group">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="contact_month" id="id_contact_month">1 month <i class="fa fa-angle-down"></i></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">1 month</a></li><li><a href="#">2 months</a></li>
+              </ul>
+            </span>
+            <p class="form-control-static">we are planning on:</p>
+            <br><br>
+            <textarea class="form-control textarea-lined" name="contact_plans" id="id_contact_plans" rows="2" cols="100"></textarea>
+          </div>
+        <p class="form-control-static">We can achieve this together by utilizing your expertise in:</p>
+          <div class="form-group text-center">            
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_consulting" type="checkbox" value=""> Consulting
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_branding" type="checkbox" value=""> Branding
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_development" type="checkbox" value=""> Development
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_web_design" type="checkbox" value=""> Web Design
+              </label>
+            </div>
+            <div class="checkbox-inline">
+              <label>
+                <input name="contact_acheive_app_design" type="checkbox" value=""> App Design
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="form-control-static">Lets connect! You can reach me by email at 
+              <input type="text" class="form-control" name="contact_email" id="id_contact_email">
+              or phone at
+              <input type="text" class="form-control" name="contact_phone" id="id_contact_phone">
+            </p>
+          </div>
+          <div class="form-group"><button type="submit" class="btn btn-default" name="contact_submit" id="id_contact_submit">Send Message</button></div>
+        </form>
+      </div><!--/ .container-->
+    </section>
+	<!-- END SECTION
+	================================================== -->
+
+  <!-- Latest JQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- bower install holderjs -->
+  <script src="../../bower_components/holderjs/holder.js"></script>
+  <!-- bower install loremjs -->
+  <!-- <p data-lorem="[1p, 1s, 1w]"></p> -->
+  <script src="../../bower_components/loremjs/lorem.js"></script>
+
+
+
+  <script>
+  
+  $(document).ready(function() {
+
+var limit = 2; // <---max no of lines you want in textarea
+var textarea = document.getElementById("id_contact_plans");
+var spaces = textarea.getAttribute("cols");
+
+textarea.onkeyup = function() {
+   var lines = textarea.value.split("\n");
+    
+   for (var i = 0; i < lines.length; i++) 
+   {
+         if (lines[i].length <= spaces) continue;
+         var j = 0;
+         
+        var space = spaces;
+        
+        while (j++ <= spaces) 
+        {
+           if (lines[i].charAt(j) === " ") space = j;  
+        }
+    lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
+    lines[i] = lines[i].substring(0, space);
+  }
+    if(lines.length>limit)
+    {
+        textarea.style.color = 'red';
+        setTimeout(function(){
+            textarea.style.color = '';
+        },500);
+    }    
+   textarea.value = lines.slice(0, limit).join("\n");
+};
+
+
+    $("#progress-form input").keyup(function() {
+    });
+  });
+
+  
+  </script>
+
+
+
+  </body>
+</html>
+ 

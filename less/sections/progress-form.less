@@ -1,0 +1,47 @@
+
+.section-progress-form {
+  .progress-form {
+    .form-control-static {
+      display: inline-block;
+      .form-control {
+        &[type="text"], &[type="select"] {
+          width: 200px;
+          display: inline;
+          border: none;
+          text-shadow: none;
+          box-shadow: none;
+          border-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+          padding: 0;
+          height: inherit;
+          border-bottom: 1px dotted @gray-light;
+        }
+      }
+    }
+    .textarea-lined {
+      border: none;
+      text-shadow: none;
+      box-shadow: none;
+      border-radius: 0;
+      background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-size: 100% 100%, 100% 100%, 100% 31px;
+      line-height: 31px;
+      resize: none;
+    }
+    .btn-group {
+      display: inline-block;
+      .btn {
+          border-top-width: 0;
+          border-left-width: 0;
+          border-right-width: 0;
+          border-bottom-style: dotted;
+          border-radius: 0;
+      }
+    }
+  }
+}
