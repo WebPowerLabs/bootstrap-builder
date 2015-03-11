@@ -6,6 +6,6 @@ echo ""
 echo "creating new site $name..."
 echo ""
 #cp html site template
-cp ./html/sites/template.html ./htmls/sites/$name.html
+cp ./html/sites/template.html ./html/sites/$name.html
 echo "done"
 echo ""
